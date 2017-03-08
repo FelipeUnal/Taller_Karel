@@ -1,17 +1,31 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Ejercicio7;
-import becker.robots.*;
 
-public class organizar {
+import becker.robots.City;
+import becker.robots.Direction;
+import becker.robots.Robot;
+import becker.robots.Thing;
+
+/**
+ *
+ * @author Grimma
+ */
+public class OrganizarF {
     private Robot Bender;
     private City PlanetExpress;
     private Thing Entrega;
-public organizar(Robot Bender, City PlanetExpress, Thing Entrega) {
+
+    public OrganizarF(Robot Bender, City PlanetExpress, Thing Entrega) {
         this.Bender = Bender;
         this.PlanetExpress = PlanetExpress;
         this.Entrega = Entrega;
     }
-public Thing getEntrega() {
+
+    public Thing getEntrega() {
         for(int i = 0; i<10; i++){
             for(int j = 0; j<10; j++){
                 if((i == 1)||(i==2)||(i==3)||(i==4)||(i==5)||(i==6)||(i==7)||(i==8)||(i==9)||(i==0)){
@@ -21,12 +35,20 @@ public Thing getEntrega() {
         }        
         return Entrega;
     }
-public organizar(){
+    
+   public OrganizarF(){
        this.PlanetExpress = new City(12,12);
        this.Bender = new Robot(PlanetExpress, 0,0, Direction.EAST);
        getEntrega();
-}
+       
+   }
     void Recoger(){
+        if(Bender.canPickThing()==true){
+            Bender.pickThing();
+        }
+        Bender.move();
+    }
+    void RecogerStop(){
         if(Bender.canPickThing()==true){
             Bender.pickThing();
         }
@@ -52,5 +74,5 @@ public organizar(){
     int PosicionC(){
         int n = Bender.getStreet();
         return n;
-    }
-}  
+    }     
+}
