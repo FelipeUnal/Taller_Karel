@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Ejercicio7;
 
 import becker.robots.City;
@@ -10,10 +5,6 @@ import becker.robots.Direction;
 import becker.robots.Robot;
 import becker.robots.Thing;
 
-/**
- *
- * @author Grimma
- */
 public class OrganizarF {
     private Robot Bender;
     private City PlanetExpress;
@@ -40,7 +31,6 @@ public class OrganizarF {
        this.PlanetExpress = new City(12,12);
        this.Bender = new Robot(PlanetExpress, 0,0, Direction.EAST);
        getEntrega();
-       
    }
     void Recoger(){
         if(Bender.canPickThing()==true){
