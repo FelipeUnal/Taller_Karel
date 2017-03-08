@@ -5,12 +5,12 @@ import becker.robots.Direction;
 import becker.robots.Robot;
 import becker.robots.Thing;
 
-public class OrganizarF {
+public class FuncionesdeBender {
     private Robot Bender;
     private City PlanetExpress;
     private Thing Entrega;
 
-    public OrganizarF(Robot Bender, City PlanetExpress, Thing Entrega) {
+    public FuncionesdeBender(Robot Bender, City PlanetExpress, Thing Entrega) {
         this.Bender = Bender;
         this.PlanetExpress = PlanetExpress;
         this.Entrega = Entrega;
@@ -27,7 +27,7 @@ public class OrganizarF {
         return Entrega;
     }
     
-   public OrganizarF(){
+   public FuncionesdeBender(){
        this.PlanetExpress = new City(12,12);
        this.Bender = new Robot(PlanetExpress, 0,0, Direction.EAST);
        getEntrega();
